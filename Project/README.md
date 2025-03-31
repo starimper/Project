@@ -2,6 +2,15 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
 
+# Description
+
+Our project is a task management web application where users can create, view, update, and delete tasks. Tasks are associated with specific users and can be assigned to specific dates. Users can manage their tasks efficiently by categorizing them and tracking their completion status.
+
+#Group Members
+
+-Baidayev Ruslan
+-Eserkey Dana
+
 ## Development server
 
 To start a local development server, run:
