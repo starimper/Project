@@ -7,7 +7,7 @@ Our project is a task management web application where users can create, view, u
 # Group Members
 
 - Baidayev Ruslan
-- Eserkey Dana
+- Esserkey Dana
 # Features
 
 - Users can add, edit, and delete tasks.
