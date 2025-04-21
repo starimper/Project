@@ -1,0 +1,17 @@
+
+<h2>Edit Task</h2>
+<form (ngSubmit)="updateTask()">
+  <label>Title: <input [(ngModel)]="task.title" name="title"></label><br>
+  <label>Description: <textarea [(ngModel)]="task.description" name="description"></textarea></label><br>
+  <label>Due Date: <input type="date" [(ngModel)]="task.due_date" name="due_date"></label><br>
+  <label>Importance: 
+    <select [(ngModel)]="task.importance" name="importance">
+      <option [value]="1">Low</option>
+      <option [value]="2">Medium</option>
+      <option [value]="3">High</option>
+    </select>
+  </label><br>
+  <label>Status ID: <input type="number" [(ngModel)]="task.status" name="status"></label><br>
+  <label>Category ID: <input type="number" [(ngModel)]="task.category" name="category"></label><br>
+  <button type="submit">Update</button>
+</form>

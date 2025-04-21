@@ -5,10 +5,13 @@ from rest_framework.response import Response
 from .models import Task, TaskStatus, Category
 from .serializers import TaskSerializer, StatusSerializer, CategorySimpleSerializer
 
+# CBV views
 class TaskListCreateView(generics.ListCreateAPIView):
-    queryset = Task.objects.all()
     serializer_class = TaskSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return Task.objects.for_user(self.request.user)
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
@@ -18,6 +21,7 @@ class TaskDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = TaskSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+# FBV views
 @api_view(['GET'])
 @permission_classes([permissions.IsAuthenticated])
 def status_list(request):

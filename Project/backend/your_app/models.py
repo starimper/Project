@@ -2,6 +2,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class TaskManager(models.Manager):
+    def for_user(self, user):
+        return self.filter(user=user)
+
 class TaskStatus(models.Model):
     name = models.CharField(max_length=50)
 
@@ -17,3 +21,5 @@ class Task(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    objects = TaskManager()
