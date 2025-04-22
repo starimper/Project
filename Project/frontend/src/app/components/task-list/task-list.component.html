@@ -1,8 +1,0 @@
-
-<app-task-filter (filterChange)="onFilterChange($event)"></app-task-filter>
-<div *ngFor="let task of filteredTasks" class="task-card">
-  <h4>{{ task.title }} (Priority: {{ task.importance }})</h4>
-  <p>{{ task.description }}</p>
-  <button (click)="editTask(task.id)">Edit</button>
-  <button (click)="deleteTask(task.id)">Delete</button>
-</div>
