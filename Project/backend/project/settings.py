@@ -1,1 +1,0 @@
-# This file is placeholder. Add 'rest_framework', 'your_app', and JWT settings.
